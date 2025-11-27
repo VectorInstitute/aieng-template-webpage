@@ -12,7 +12,7 @@ const About: React.FC = () => {
     <Box minHeight="100vh">
       <Header />
       <Box
-        bgGradient="linear(to-r, brand.pink, brand.purple)"
+        bgGradient="linear(to-r, brand.magenta, brand.cobalt)"
         position="relative"
         overflow="hidden"
         minHeight="calc(100vh - 80px)"
@@ -20,9 +20,9 @@ const About: React.FC = () => {
       >
         <Container maxW="1200px" position="relative" zIndex={1}>
           <VStack spacing={8} alignItems="center" color="white" textAlign="center">
-            <Heading as="h1" size="2xl">About the template</Heading>
-            <Text fontSize="xl" maxW="800px">
-              This template is a starting point for building a website with Next.js and Chakra UI.
+            <Heading as="h1" size="2xl" fontFamily="'Karbon', 'Open Sans', sans-serif" fontWeight="semibold">About the template</Heading>
+            <Text fontSize="xl" maxW="800px" fontFamily="'Open Sans', sans-serif">
+              This template is a starting point for building a website with Next.js and Chakra UI, following the Vector Institute brand guidelines.
             </Text>
             <Flex gap={8} alignItems="center" flexWrap="wrap" justifyContent="center">
               <Link as={NextLink} href="https://vectorinstitute.ai" isExternal>

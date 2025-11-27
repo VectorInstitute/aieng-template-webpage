@@ -10,7 +10,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const NavLinks: React.FC = memo(() => (
   <>
-    <Link as={NextLink} href="/about" color="white" fontWeight="semibold">
+    <Link as={NextLink} href="/about" color="white" fontWeight="semibold" fontFamily="'Open Sans', sans-serif">
       About
     </Link>
   </>

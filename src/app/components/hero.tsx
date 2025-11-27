@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
 
   return (
     <Box
-      bgGradient="linear(to-r, brand.pink, brand.purple)"
+      bgGradient="linear(to-r, brand.magenta, brand.cobalt)"
       position="relative"
       overflow="hidden"
       minHeight={{ base: "70vh", md: "80vh" }}
@@ -31,13 +31,13 @@ const Hero: React.FC = () => {
           textAlign={{ base: "center", md: "left" }}
         >
           <Skeleton isLoaded={!isLoading} fadeDuration={0.5}>
-            <Heading as="h1" size={headingSize} color="white" fontWeight="bold">
-              Your vector project website!
+            <Heading as="h1" size={headingSize} color="white" fontWeight="semibold" fontFamily="'Karbon', 'Open Sans', sans-serif">
+              Where AI possibilities come to life
             </Heading>
           </Skeleton>
           <Skeleton isLoaded={!isLoading} fadeDuration={0.5}>
-            <Text fontSize={textSize} color="white">
-              A simple and easy way to create your own vector project website.
+            <Text fontSize={textSize} color="white" fontFamily="'Open Sans', sans-serif">
+              Remarkable in progress.
             </Text>
           </Skeleton>
         </VStack>

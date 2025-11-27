@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,18 +7,28 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
-  --vector-pink: 235, 8, 138;
-  --vector-purple: 138, 8, 235;
+  /* Primary colors */
+  --vector-magenta: 235, 8, 138;
+  --vector-black: 0, 0, 0;
+  --vector-grey: 233, 232, 232;
+  /* Secondary colors */
+  --vector-cobalt: 49, 60, 255;
+  --vector-violet: 138, 37, 201;
+  --vector-turquoise: 72, 192, 217;
+  --vector-tangerine: 255, 158, 0;
+  --vector-lime: 207, 249, 51;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  font-family: 'Open Sans', sans-serif;
 }
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-semibold;
+    font-family: 'Karbon', 'Open Sans', sans-serif;
   }
 }
 
