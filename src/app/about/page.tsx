@@ -19,13 +19,13 @@ const About: React.FC = () => {
         pt={{ base: "80px", md: "100px" }}
       >
         <Container maxW="1200px" position="relative" zIndex={1}>
-          <VStack spacing={8} alignItems="center" color="white" textAlign="center">
+          <VStack gap={8} alignItems="center" color="white" textAlign="center">
             <Heading as="h1" size="2xl" fontFamily="'Karbon', 'Open Sans', sans-serif" fontWeight="semibold">About the template</Heading>
             <Text fontSize="xl" maxW="800px" fontFamily="'Open Sans', sans-serif">
               This template is a starting point for building a website with Next.js and Chakra UI, following the Vector Institute brand guidelines.
             </Text>
             <Flex gap={8} alignItems="center" flexWrap="wrap" justifyContent="center">
-              <Link as={NextLink} href="https://vectorinstitute.ai" isExternal>
+              <a href="https://vectorinstitute.ai" target="_blank" rel="noopener noreferrer">
                 <Image
                   src={`${basePath}/images/vector-logo.png`}
                   alt="Vector Institute"
@@ -33,7 +33,7 @@ const About: React.FC = () => {
                   height={40}
                   objectFit="contain"
                 />
-              </Link>
+              </a>
             </Flex>
           </VStack>
         </Container>
