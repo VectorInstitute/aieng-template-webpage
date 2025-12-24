@@ -12,7 +12,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^3.30.0",
-    "@deck.gl/core": "^9.0.29",
+    "@deck.gl/core": "^9.2.5",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.14.1",
     "@headlessui/react": "^2.1.8",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
-    "@types/node": "^20",
+    "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.20",
