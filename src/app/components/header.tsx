@@ -1,7 +1,8 @@
 'use client';
 
 import React, { memo } from 'react';
-import { Box, Flex, Link, Container, Image, useBreakpointValue, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, Link, Container, Image, useBreakpointValue, IconButton, useDisclosure } from '@chakra-ui/react'
+import { Drawer } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/navigation'
@@ -10,8 +11,10 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const NavLinks: React.FC = memo(() => (
   <>
-    <Link as={NextLink} href="/about" color="white" fontWeight="semibold" fontFamily="'Open Sans', sans-serif">
-      About
+    <Link asChild>
+      <NextLink href="/about" style={{ color: 'white', fontWeight: 600, fontFamily: "'Open Sans', sans-serif" }}>
+        About
+      </NextLink>
     </Link>
   </>
 ));
@@ -19,7 +22,7 @@ const NavLinks: React.FC = memo(() => (
 NavLinks.displayName = 'NavLinks';
 
 const Header: React.FC = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { open, onOpen, onClose } = useDisclosure()
   const logoSize = useBreakpointValue({ base: "120px", md: "150px" })
   const isMobile = useBreakpointValue({ base: true, md: false })
   const router = useRouter()
@@ -51,23 +54,28 @@ const Header: React.FC = () => {
             <>
               <IconButton
                 aria-label="Open menu"
-                icon={<HamburgerIcon />}
                 onClick={onOpen}
                 variant="outline"
                 color="white"
-              />
-              <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-                <DrawerOverlay />
-                <DrawerContent>
-                  <DrawerCloseButton />
-                  <DrawerHeader>Menu</DrawerHeader>
-                  <DrawerBody>
-                    <Flex direction="column" gap={4}>
-                      <NavLinks />
-                    </Flex>
-                  </DrawerBody>
-                </DrawerContent>
-              </Drawer>
+              >
+                <HamburgerIcon />
+              </IconButton>
+              <Drawer.Root open={open} placement="end" onOpenChange={(e) => e.open ? onOpen() : onClose()}>
+                <Drawer.Backdrop />
+                <Drawer.Positioner>
+                  <Drawer.Content>
+                    <Drawer.Header>
+                      <Drawer.Title>Menu</Drawer.Title>
+                      <Drawer.CloseTrigger />
+                    </Drawer.Header>
+                    <Drawer.Body>
+                      <Flex direction="column" gap={4}>
+                        <NavLinks />
+                      </Flex>
+                    </Drawer.Body>
+                  </Drawer.Content>
+                </Drawer.Positioner>
+              </Drawer.Root>
             </>
           ) : (
             <Flex gap={6}>
