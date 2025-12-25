@@ -1,4 +1,3 @@
-import { Providers } from './providers';
 import './globals.css';
 import { Metadata } from 'next';
 
@@ -15,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>
-          {children}
-        </Providers>
+        {children}
       </body>
     </html>
   )

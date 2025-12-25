@@ -1,60 +1,27 @@
 'use client';
 
-import React, { useState, useEffect, memo } from 'react';
-import { Box, Container, Heading, Text, VStack, useBreakpointValue, Skeleton } from '@chakra-ui/react'
+import React, { memo } from 'react';
 
 const Hero: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const headingSize = useBreakpointValue({ base: "2xl", md: "3xl", lg: "4xl" }) as "2xl" | "3xl" | "4xl";
-  const textSize = useBreakpointValue({ base: "md", md: "lg", lg: "xl" }) as "md" | "lg" | "xl";
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <Box
-      bgGradient="linear(to-r, brand.magenta, brand.cobalt)"
-      position="relative"
-      overflow="hidden"
-      minHeight={{ base: "70vh", md: "80vh" }}
-      pt={{ base: "80px", md: "100px" }}
-    >
-      <Container maxW="1200px" h="full" position="relative" zIndex={1}>
-        <VStack
-          gap={6}
-          alignItems={{ base: "center", md: "flex-start" }}
-          justifyContent="center"
-          h="full"
-          maxW={{ base: "100%", md: "60%", lg: "50%" }}
-          textAlign={{ base: "center", md: "left" }}
-        >
-          <Skeleton loading={isLoading}>
-            <Heading as="h1" size={headingSize} color="white" fontWeight="semibold" fontFamily="'Karbon', 'Open Sans', sans-serif">
-              Where AI possibilities come to life
-            </Heading>
-          </Skeleton>
-          <Skeleton loading={isLoading}>
-            <Text fontSize={textSize} color="white" fontFamily="'Open Sans', sans-serif">
-              Remarkable in progress.
-            </Text>
-          </Skeleton>
-        </VStack>
-      </Container>
-      <Box
-        position="absolute"
-        top={{ base: "60%", md: "40%" }}
-        right={{ base: "-20%", md: "-5%" }}
-        width={{ base: "120%", md: "70%" }}
-        height={{ base: "100%", md: "140%" }}
-        bg="white"
-        borderTopLeftRadius={{ base: "30%", md: "50%" }}
-        transform={{ base: "rotate(-5deg)", md: "rotate(-10deg)" }}
-        boxShadow="0 -4px 30px rgba(0, 0, 0, 0.1)"
-        transition="all 0.3s ease-in-out"
+    <div className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] pt-20 md:pt-[100px]"
+         style={{
+           background: 'linear-gradient(to right, #EB088A, #313CFF)'
+         }}>
+      <div className="max-w-[1200px] mx-auto h-full relative z-10 px-4">
+        <div className="flex flex-col gap-6 items-center md:items-start justify-center h-full max-w-full md:max-w-[60%] lg:max-w-[50%] text-center md:text-left py-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-white font-semibold font-['Karbon','Open_Sans',sans-serif]">
+            Where AI possibilities come to life
+          </h1>
+          <p className="text-base md:text-lg lg:text-xl text-white font-['Open_Sans',sans-serif]">
+            Remarkable in progress.
+          </p>
+        </div>
+      </div>
+      <div
+        className="absolute top-[60%] md:top-[40%] -right-[20%] md:-right-[5%] w-[120%] md:w-[70%] h-full md:h-[140%] bg-white rounded-tl-[30%] md:rounded-tl-[50%] rotate-[-5deg] md:rotate-[-10deg] shadow-[0_-4px_30px_rgba(0,0,0,0.1)] transition-all duration-300 ease-in-out"
       />
-    </Box>
+    </div>
   )
 }
 

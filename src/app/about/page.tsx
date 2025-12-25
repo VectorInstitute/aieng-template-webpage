@@ -1,55 +1,44 @@
 'use client';
 
 import React, { memo } from 'react';
-import { Box, Container, Flex, Heading, Text, Image, VStack, Link } from '@chakra-ui/react';
-import NextLink from 'next/link';
 import Header from '../components/header';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const About: React.FC = () => {
   return (
-    <Box minHeight="100vh">
+    <div className="min-h-screen">
       <Header />
-      <Box
-        bgGradient="linear(to-r, brand.magenta, brand.cobalt)"
-        position="relative"
-        overflow="hidden"
-        minHeight="calc(100vh - 80px)"
-        pt={{ base: "80px", md: "100px" }}
+      <div
+        className="relative overflow-hidden min-h-[calc(100vh-80px)] pt-20 md:pt-[100px]"
+        style={{
+          background: 'linear-gradient(to right, #EB088A, #313CFF)'
+        }}
       >
-        <Container maxW="1200px" position="relative" zIndex={1}>
-          <VStack gap={8} alignItems="center" color="white" textAlign="center">
-            <Heading as="h1" size="2xl" fontFamily="'Karbon', 'Open Sans', sans-serif" fontWeight="semibold">About the template</Heading>
-            <Text fontSize="xl" maxW="800px" fontFamily="'Open Sans', sans-serif">
-              This template is a starting point for building a website with Next.js and Chakra UI, following the Vector Institute brand guidelines.
-            </Text>
-            <Flex gap={8} alignItems="center" flexWrap="wrap" justifyContent="center">
+        <div className="max-w-[1200px] mx-auto px-4 relative z-10 py-12">
+          <div className="flex flex-col gap-8 items-center text-white text-center">
+            <h1 className="text-4xl font-semibold font-['Karbon','Open_Sans',sans-serif]">
+              About the template
+            </h1>
+            <p className="text-xl max-w-[800px] font-['Open_Sans',sans-serif]">
+              This template is a starting point for building a website with Next.js and Tailwind CSS, following the Vector Institute brand guidelines.
+            </p>
+            <div className="flex gap-8 items-center flex-wrap justify-center">
               <a href="https://vectorinstitute.ai" target="_blank" rel="noopener noreferrer">
-                <Image
+                <img
                   src={`${basePath}/images/vector-logo.png`}
                   alt="Vector Institute"
-                  width={150}
-                  height={40}
-                  objectFit="contain"
+                  className="w-[150px] h-10 object-contain"
                 />
               </a>
-            </Flex>
-          </VStack>
-        </Container>
-        <Box
-          position="absolute"
-          top={{ base: "60%", md: "40%" }}
-          right={{ base: "-20%", md: "-5%" }}
-          width={{ base: "120%", md: "70%" }}
-          height={{ base: "100%", md: "140%" }}
-          bg="white"
-          borderTopLeftRadius={{ base: "30%", md: "50%" }}
-          transform={{ base: "rotate(-5deg)", md: "rotate(-10deg)" }}
-          boxShadow="0 -4px 30px rgba(0, 0, 0, 0.1)"
+            </div>
+          </div>
+        </div>
+        <div
+          className="absolute top-[60%] md:top-[40%] -right-[20%] md:-right-[5%] w-[120%] md:w-[70%] h-full md:h-[140%] bg-white rounded-tl-[30%] md:rounded-tl-[50%] rotate-[-5deg] md:rotate-[-10deg] shadow-[0_-4px_30px_rgba(0,0,0,0.1)]"
         />
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
 
