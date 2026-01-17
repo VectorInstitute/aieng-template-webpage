@@ -12,7 +12,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^3.31.0",
-    "@deck.gl/core": "^9.2.5",
+    "@deck.gl/core": "^9.2.6",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.14.1",
     "@headlessui/react": "^2.1.8",
