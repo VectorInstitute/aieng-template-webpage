@@ -17,7 +17,7 @@
     "@emotion/styled": "^11.14.1",
     "@headlessui/react": "^2.1.8",
     "@heroicons/react": "^2.1.5",
-    "framer-motion": "^12.37.0",
+    "framer-motion": "^12.38.0",
     "html-react-parser": "^5.1.16",
     "lodash": "^4.17.23",
     "next": "^16.1.5",
