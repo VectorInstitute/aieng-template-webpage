@@ -15,7 +15,7 @@
     "@deck.gl/core": "^9.2.6",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.14.1",
-    "@headlessui/react": "^2.1.8",
+    "@headlessui/react": "^2.2.10",
     "@heroicons/react": "^2.1.5",
     "framer-motion": "^12.38.0",
     "html-react-parser": "^6.0.0",
